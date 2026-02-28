@@ -13,15 +13,15 @@
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "name": "Lu Machado Podologia",
-      "image": "https://suaimagemaqui.com/foto-clinica.jpg",
+      "image": "https://lumachadopodologia.com.br/fundo-hero.jpg",
       "url": "https://lumachadopodologia.com.br",
-      "telephone": "+5547999999999",
+      "telephone": "+5547988907008",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Rua [NOME DA RUA], nº [NÚMERO]",
+        "streetAddress": "Rua 2448, 398",
         "addressLocality": "Balneário Camboriú",
         "addressRegion": "SC",
-        "postalCode": "88330-000",
+        "postalCode": "88330-398",
         "addressCountry": "BR"
       },
       "geo": {
@@ -37,45 +37,43 @@
       }
     }
     </script>
-<style>
+
+    <style>
         :root {
-            /* PALETA SOFISTICADA LU MACHADO */
-            --primary-bg: #fdfdfd;      /* 60% - Off-white (Assepsia/Luxo) */
-            --text-main: #2d2d2d;      /* 30% - Grafite Escuro (Autoridade) */
-            --accent-orange: #d47a39;  /* 10% - Laranja Cobre/Terracota (Conversão Premium) */
-            --whatsapp-green: #25d366; /* Mantemos o verde padrão apenas no ícone flutuante por ser universal */
+            /* PALETA SOFISTICADA LU MACHADO (60-30-10) */
+            --primary-bg: #fdfdfd;      /* 60% - Base Clean */
+            --text-main: #2d2d2d;      /* 30% - Grafite Autoridade */
+            --accent-orange: #d47a39;  /* 10% - Laranja Cobre (Conversão) */
+            --whatsapp-green: #25d366; 
             --light-gray: #f0f0f0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Open Sans', sans-serif; color: var(--text-main); background-color: var(--primary-bg); line-height: 1.6; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; }
 
         header { background: #fff; padding: 15px; text-align: center; border-bottom: 1px solid var(--light-gray); }
 
         .hero {
-            /* Imagem com overlay grafite para destacar o Laranja do botão */
-            background: linear-gradient(rgba(45, 45, 45, 0.7), rgba(45, 45, 45, 0.7)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80') center/cover;
+            /* Camada escura (overlay) de 0.7 para garantir leitura do texto branco sobre a imagem */
+            background: linear-gradient(rgba(45, 45, 45, 0.7), rgba(45, 45, 45, 0.7)), url('fundo-hero.jpg') center/cover;
             color: white;
-            padding: 90px 20px;
+            padding: 100px 20px;
             text-align: center;
         }
 
-        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; letter-spacing: -1px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 35px; max-width: 700px; margin-inline: auto; opacity: 0.9; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 35px; max-width: 700px; margin-inline: auto; opacity: 0.9; text-transform: none; }
 
-        /* O BOTÃO LARANJA COBRE - O Ponto de Conversão */
         .cta-button {
             background-color: var(--accent-orange);
             color: white;
             padding: 22px 45px;
             text-decoration: none;
-            border-radius: 5px; /* Bordas levemente retas passam mais seriedade que as redondas */
+            border-radius: 4px;
             font-weight: bold;
             display: inline-block;
             font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             transition: 0.3s ease;
             box-shadow: 0 10px 20px rgba(212, 122, 57, 0.3);
         }
@@ -88,16 +86,17 @@
         .service-card { 
             background: #fff; 
             padding: 40px 30px; 
-            border-radius: 2px; 
-            border: 1px solid #eee;
+            border-radius: 4px; 
+            border: 1px solid var(--light-gray);
             transition: 0.3s; 
         }
-        .service-card:hover { border-color: var(--accent-orange); }
-        .service-card h3 { color: var(--accent-orange); margin-bottom: 15px; font-size: 1.2rem; }
+        .service-card:hover { border-color: var(--accent-orange); transform: translateY(-5px); }
+        .service-card h3 { color: var(--accent-orange); margin-bottom: 15px; font-size: 1.1rem; }
+        .service-card p { font-size: 0.95rem; color: #555; }
 
         .location { padding: 80px 20px; background: #f9f9f9; }
-        .location-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .map-box { border-radius: 4px; overflow: hidden; height: 350px; filter: grayscale(0.2); }
+        .location-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: center; }
+        .map-box { border-radius: 4px; overflow: hidden; height: 350px; border: 1px solid #ddd; }
 
         .whatsapp-float {
             position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
@@ -107,18 +106,19 @@
         }
 
         footer { background: var(--text-main); color: #aaa; padding: 50px 20px; text-align: center; font-size: 0.8rem; }
-        footer strong { color: #fff; }
+        footer strong { color: #fff; display: block; margin-bottom: 5px; }
 
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.9rem; }
             .cta-button { width: 100%; padding: 20px; }
+            .location-container { text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <strong style="color: var(--primary-color); font-size: 1.2rem; letter-spacing: 1px;">LU MACHADO PODOLOGIA</strong>
+        <strong style="color: var(--text-main); font-size: 1.2rem; letter-spacing: 2px;">LU MACHADO PODOLOGIA</strong>
     </header>
 
     <section class="hero">
@@ -132,19 +132,19 @@
         <div class="service-grid">
             <div class="service-card">
                 <h3>Unhas Encravadas</h3>
-                <p>Procedimento clínico indolor e seguro. Especialista em casos complexos e recorrentes.</p>
+                <p>Procedimento clínico indolor e seguro. Especialista em casos complexos e recorrentes com correção definitiva.</p>
             </div>
             <div class="service-card">
                 <h3>Laserterapia</h3>
-                <p>Elimine fungos e micoses com a tecnologia mais avançada e rápida do mercado.</p>
+                <p>Tecnologia avançada para eliminação de fungos e micoses de forma rápida, segura e eficaz.</p>
             </div>
             <div class="service-card">
                 <h3>Calos e Fissuras</h3>
-                <p>Remoção técnica de calosidades e tratamento profundo para pés ressecados.</p>
+                <p>Remoção técnica de calosidades e tratamento profundo para pés ressecados, devolvendo o conforto.</p>
             </div>
             <div class="service-card">
                 <h3>Pé Diabético</h3>
-                <p>Cuidado preventivo especializado para garantir a saúde e segurança de pacientes diabéticos.</p>
+                <p>Cuidado preventivo especializado e rigoroso para garantir a saúde e segurança de pacientes diabéticos.</p>
             </div>
         </div>
     </section>
@@ -152,19 +152,19 @@
     <section class="location" id="contato">
         <div class="location-container">
             <div>
-                <h2 style="color: var(--primary-color); margin-bottom: 15px;">Onde Atendemos</h2>
+                <h2 style="color: var(--text-main); margin-bottom: 20px;">Onde Atendemos</h2>
                 <p style="font-size: 1.1rem; margin-bottom: 10px;"><strong>Unidade Balneário Camboriú, SC</strong></p>
-                <p style="color: #555; margin-bottom: 20px;">
+                <p style="color: #555; margin-bottom: 25px;">
                     Rua 2448, 398 <br>
                     Centro - Balneário Camboriú/SC<br>
                     CEP: 88330-398
                 </p>
-                <p style="margin-bottom: 20px;"><strong>Horário:</strong> Seg a Sex: 09h às 18h</p>
-                <a href="https://wa.me/5547988907008" style="color: var(--primary-color); font-weight: bold; text-decoration: underline;">Falar com a recepção no WhatsApp</a>
+                <p style="margin-bottom: 20px;"><strong>Horário de Atendimento:</strong><br> Segunda a Sexta: 09h às 18h</p>
+                <a href="https://wa.me/5547988907008" style="color: var(--accent-orange); font-weight: bold; text-decoration: underline;">Ver localização no Google Maps</a>
             </div>
             <div class="map-box">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14227.35163588965!2d-48.6354!3d-26.9922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b610c145a31b%3A0x6a0a80c98236166e!2sBalne%C3%A1rio%20Cambori%C3%BA%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.406834164319!2d-48.6366!3d-26.9942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b668!2sRua%202448%2C%20398%20-%20Centro%2C%20Balne%C3%A1rio%20Cambori%C3%BA%20-%20SC!5e0!3m2!1spt-BR!2sbr!4v1700000000000" 
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                 </iframe>
             </div>
@@ -172,9 +172,9 @@
     </section>
 
     <footer>
-        <p><strong>Lu Machado Podologia Clínica</strong></p>
-        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;">Atendimento em Balneário Camboriú (SC) e Cachoeirinha (RS).</p>
-        <p style="font-size: 0.7rem; margin-top: 20px;">&copy; 2026 - Todos os direitos reservados.</p>
+        <strong>Lu Machado Podologia Clínica</strong>
+        <p>Balneário Camboriú (SC) | Cachoeirinha (RS)</p>
+        <p style="font-size: 0.7rem; margin-top: 25px; opacity: 0.6;">© 2026 - Todos os direitos reservados.</p>
     </footer>
 
     <a href="https://wa.me/5547988907008" class="whatsapp-float" target="_blank">
