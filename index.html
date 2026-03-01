@@ -1,49 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lu Machado Podologia | Balneário Camboriú - Saúde dos Pés</title>
     <meta name="description" content="Especialista em Podologia Clínica em Balneário Camboriú. Tratamento de unha encravada, calos e laserterapia. Alívio imediato e atendimento premium.">
     
+    <link rel="preload" as="image" href="imagem1.jpeg">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalBusiness",
-      "name": "Lu Machado Podologia",
-      "image": "https://lumachadopodologia.com.br/fundo-hero.jpg",
-      "url": "https://lumachadopodologia.com.br",
-      "telephone": "+5547988907008",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua 2448, 398",
-        "addressLocality": "Balneário Camboriú",
-        "addressRegion": "SC",
-        "postalCode": "88330-398",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -26.9922, 
-        "longitude": -48.6354
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
-    }
-    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
         :root {
-            /* PALETA SOFISTICADA LU MACHADO (60-30-10) */
-            --primary-bg: #fdfdfd;      /* 60% - Base Clean */
-            --text-main: #2d2d2d;      /* 30% - Grafite Autoridade */
-            --accent-orange: #d47a39;  /* 10% - Laranja Cobre (Conversão) */
+            --primary-bg: #fdfdfd;
+            --text-main: #2d2d2d;
+            --accent-orange: #d47a39;
             --whatsapp-green: #25d366; 
             --light-gray: #f0f0f0;
         }
@@ -52,79 +30,117 @@
         body { font-family: 'Open Sans', sans-serif; color: var(--text-main); background-color: var(--primary-bg); line-height: 1.6; scroll-behavior: smooth; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; text-transform: uppercase; }
 
-        header { background: #fff; padding: 15px; text-align: center; border-bottom: 1px solid var(--light-gray); }
+        header { background: #fff; padding: 15px; text-align: center; border-bottom: 1px solid var(--light-gray); position: relative; z-index: 100; }
 
-        .hero {
-            /* Camada escura (overlay) de 0.7 para garantir leitura do texto branco sobre a imagem */
-            background: linear-gradient(rgba(45, 45, 45, 0.7), rgba(45, 45, 45, 0.7)), url('fundo-hero.jpg') center/cover;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-        }
+        /* --- HERO SECTION --- */
+        .hero { position: relative; height: 85vh; min-height: 500px; overflow: hidden; display: grid; place-items: center; color: white; text-align: center; }
+        .swiper { width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1; }
+        .swiper-slide { background-size: cover; background-position: center; position: relative; }
+        .swiper-slide::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(212, 122, 57, 0.2) 100%); z-index: 2; }
 
-        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; letter-spacing: -1px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 35px; max-width: 700px; margin-inline: auto; opacity: 0.9; text-transform: none; }
+        /* Box de Texto */
+        .hero-content { position: relative; z-index: 10; max-width: 750px; width: 90%; background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 12px; padding: 50px 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.15); }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; text-shadow: 2px 2px 8px rgba(0,0,0,0.3); letter-spacing: -1px; line-height: 1.1; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95; text-shadow: 1px 1px 4px rgba(0,0,0,0.3); }
 
-        .cta-button {
-            background-color: var(--accent-orange);
-            color: white;
-            padding: 22px 45px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            display: inline-block;
-            font-size: 1.1rem;
-            transition: 0.3s ease;
-            box-shadow: 0 10px 20px rgba(212, 122, 57, 0.3);
-        }
-        .cta-button:hover { transform: translateY(-3px); background-color: #bc662d; box-shadow: 0 15px 25px rgba(212, 122, 57, 0.4); }
+        .cta-button { background-color: var(--accent-orange); color: white; padding: 20px 45px; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block; font-size: 1.1rem; transition: 0.3s ease; box-shadow: 0 8px 15px rgba(212, 122, 57, 0.3); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; }
+        .cta-button:hover { transform: translateY(-3px); background-color: #bc662d; box-shadow: 0 12px 25px rgba(212, 122, 57, 0.4); }
 
+        /* --- SERVIÇOS --- */
         .services { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
         .services h2 { text-align: center; margin-bottom: 50px; color: var(--text-main); font-size: 2rem; }
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        
-        .service-card { 
-            background: #fff; 
-            padding: 40px 30px; 
-            border-radius: 4px; 
-            border: 1px solid var(--light-gray);
-            transition: 0.3s; 
-        }
+        .service-card { background: #fff; padding: 40px 30px; border-radius: 4px; border: 1px solid var(--light-gray); transition: 0.3s; }
         .service-card:hover { border-color: var(--accent-orange); transform: translateY(-5px); }
         .service-card h3 { color: var(--accent-orange); margin-bottom: 15px; font-size: 1.1rem; }
         .service-card p { font-size: 0.95rem; color: #555; }
 
+        /* --- SOBRE A ESPECIALISTA --- */
+        .about { padding: 80px 20px; background-color: #fff; border-top: 1px solid var(--light-gray); border-bottom: 1px solid var(--light-gray); }
+        .about-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-image { border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .about-image img { width: 100%; height: auto; display: block; object-fit: cover; }
+        .about-text h2 { color: var(--text-main); font-size: 2rem; margin-bottom: 15px; }
+        .about-text h3 { color: var(--accent-orange); font-size: 1rem; margin-bottom: 25px; letter-spacing: 1px; }
+        .about-text p { margin-bottom: 20px; color: #555; font-size: 1.05rem; line-height: 1.7; }
+        .insta-button { display: inline-flex; align-items: center; gap: 10px; border: 2px solid var(--accent-orange); color: var(--accent-orange); padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: 0.3s; margin-top: 10px; font-size: 0.95rem; }
+        .insta-button:hover { background-color: var(--accent-orange); color: #fff; }
+
+        /* --- FAQ (DÚVIDAS FREQUENTES) --- */
+        .faq { padding: 80px 20px; background-color: var(--primary-bg); }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq h2 { text-align: center; margin-bottom: 40px; color: var(--text-main); font-size: 2rem; }
+        .faq-item { border-bottom: 1px solid var(--light-gray); padding: 15px 0; cursor: pointer; transition: 0.3s; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--text-main); font-size: 1.1rem; }
+        .faq-item:hover .faq-question { color: var(--accent-orange); }
+        
+        /* O SEGREDO DO FUNCIONAMENTO ESTÁ AQUI: */
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; color: #555; font-size: 0.95rem; line-height: 1.6; }
+        .faq-answer p { padding-top: 15px; padding-bottom: 5px; }
+        .faq-item.active .faq-answer { max-height: 500px; } /* Quando recebe a classe via JS, ele abre */
+        
+        .faq-icon { font-size: 1.5rem; color: var(--accent-orange); transition: transform 0.3s ease; font-weight: 400; }
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+        /* --- LOCALIZAÇÃO --- */
         .location { padding: 80px 20px; background: #f9f9f9; }
         .location-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: center; }
         .map-box { border-radius: 4px; overflow: hidden; height: 350px; border: 1px solid #ddd; }
 
-        .whatsapp-float {
-            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
-            background-color: var(--whatsapp-green); color: #FFF; border-radius: 50px;
-            display: flex; align-items: center; justify-content: center; text-decoration: none;
-            z-index: 1000; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
+        /* --- WHATSAPP FLOAT PRO --- */
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 9999; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
         footer { background: var(--text-main); color: #aaa; padding: 50px 20px; text-align: center; font-size: 0.8rem; }
         footer strong { color: #fff; display: block; margin-bottom: 5px; }
+        .footer-insta { color: var(--accent-orange); text-decoration: none; margin-top: 10px; display: inline-block; font-weight: bold;}
 
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .about-container { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+            .about-image { max-width: 400px; margin: 0 auto; }
+            .insta-button { justify-content: center; width: 100%; }
+        }
         @media (max-width: 600px) {
+            .hero { height: 80vh; }
             .hero h1 { font-size: 1.9rem; }
-            .cta-button { width: 100%; padding: 20px; }
+            .hero p { font-size: 1rem; }
+            .hero-content { padding: 30px 20px; width: 95%; }
+            .cta-button { width: 100%; padding: 18px; font-size: 1rem; }
+            .services h2 { font-size: 1.6rem; }
             .location-container { text-align: center; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
         }
     </style>
 </head>
 <body>
-
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
     <header>
         <strong style="color: var(--text-main); font-size: 1.2rem; letter-spacing: 2px;">LU MACHADO PODOLOGIA</strong>
     </header>
 
     <section class="hero">
-        <h1>Alívio Imediato para Seus Pés</h1>
-        <p>Especialista em Balneário Camboriú: Tratamentos Clínicos, Estéticos e Esportivos com Tecnologia Laser.</p>
-        <a href="https://wa.me/5547988907008?text=Olá! Gostaria de agendar uma avaliação em Balneário Camboriú." class="cta-button">AGENDAR AVALIAÇÃO AGORA</a>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url('imagem1.jpeg')"></div>
+                <div class="swiper-slide" style="background-image: url('imagem2.jpeg')"></div>
+                <div class="swiper-slide" style="background-image: url('imagem3.jpeg')"></div>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <h1>Alívio Imediato para Seus Pés</h1>
+            <p>Especialista em Balneário Camboriú: Tratamentos Clínicos, Estéticos e Esportivos com Tecnologia Laser.</p>
+            
+            <a href="https://wa.me/5547988907008?text=Olá! Gostaria de agendar uma avaliação em Balneário Camboriú." class="cta-button track-wpp-click">AGENDAR AVALIAÇÃO AGORA</a>
+            
+            <div style="display: flex; align-items: center; justify-content: center; gap: 6px;">
+                <span style="color: #FFD700; font-size: 1.3rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">★★★★★</span>
+                <span style="font-size: 0.9rem; opacity: 0.95; font-weight: 600; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">Padrão Ouro de Avaliações no Google</span>
+            </div>
+        </div>
     </section>
 
     <section class="services">
@@ -149,39 +165,126 @@
         </div>
     </section>
 
-    <section class="location" id="contato">
-        <div class="location-container">
-            <div>
-                <h2 style="color: var(--text-main); margin-bottom: 20px;">Onde Atendemos</h2>
-                <p style="font-size: 1.1rem; margin-bottom: 10px;"><strong>Unidade Balneário Camboriú, SC</strong></p>
-                <p style="color: #555; margin-bottom: 25px;">
-                    Rua 2448, 398 <br>
-                    Centro - Balneário Camboriú/SC<br>
-                    CEP: 88330-398
-                </p>
-                <p style="margin-bottom: 20px;"><strong>Horário de Atendimento:</strong><br> Segunda a Sexta: 09h às 18h</p>
-                <a href="https://wa.me/5547988907008" style="color: var(--accent-orange); font-weight: bold; text-decoration: underline;">Ver localização no Google Maps</a>
+    <section class="about" id="sobre">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="imagemlu1.jpeg" alt="Lu Machado - Podóloga em Balneário Camboriú">
             </div>
-            <div class="map-box">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.406834164319!2d-48.6366!3d-26.9942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8b668!2sRua%202448%2C%20398%20-%20Centro%2C%20Balne%C3%A1rio%20Cambori%C3%BA%20-%20SC!5e0!3m2!1spt-BR!2sbr!4v1700000000000" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
+            <div class="about-text">
+    <h2>Lu Machado</h2>
+    <h3 style="color: var(--accent-orange); font-size: 1rem; margin-bottom: 25px; letter-spacing: 1px;">PODÓLOGA CLÍNICA & REFERÊNCIA EM CUIDADO DE EXCELÊNCIA </h3>
+    
+    <p style="margin-bottom: 15px; color: #555; font-size: 1.05rem; line-height: 1.7;">
+        Acredito que o verdadeiro conforto é caminhar com segurança e sem dor. Com formação avançada em Podologia Clínica e especializações em <strong>Micologia</strong> e <strong>Podopediatria</strong>, meu foco é entregar resultados definitivos através de tratamentos investigativos, preventivos e terapêuticos.
+    </p>
+
+    <p style="margin-bottom: 20px; color: #555; font-size: 1.05rem; line-height: 1.7;">
+        Ofereço um ambiente de alto padrão, ético e rigorosamente seguro em Balneário Camboriú. Meu atendimento é 100% individualizado para:
+    </p>
+
+    <ul style="list-style: none; margin-bottom: 25px; color: #555; font-size: 1.05rem; line-height: 1.6;">
+        <li style="margin-bottom: 10px;"><strong>✓ Casos Complexos:</strong> Erradicação de fungos (micoses), unhas encravadas crônicas e calosidades severas.</li>
+        <li style="margin-bottom: 10px;"><strong>✓ Todas as Idades:</strong> Protocolos de excelência para adultos e idosos.</li>
+        <li style="margin-bottom: 10px;"><strong>✓ Cuidado Inclusivo:</strong> Acompanhamento humanizado e adaptado para crianças e adultos com necessidades específicas ou neurodivergentes.</li>
+    </ul>
+
+    <p style="margin-bottom: 25px; color: var(--text-main); font-weight: 600; font-size: 1.05rem;">
+        Meu propósito vai além do procedimento: é devolver a sua autoestima, saúde e qualidade de vida.
+    </p>
+    
+    <a href="https://instagram.com/lumachado_podologia/" target="_blank" class="insta-button track-insta-click">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        ACOMPANHE MEU PORTFÓLIO
+    </a>
+</div>
+        </div>
+    </section>
+
+    <section class="faq" id="duvidas">
+        <div class="faq-container">
+            <h2>Dúvidas Frequentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">O tratamento de unha encravada dói? <span class="faq-icon">+</span></div>
+                <div class="faq-answer"><p>Nosso foco é o seu conforto. Utilizamos técnicas modernas e equipamentos de ponta que tornam o procedimento extremamente seguro, rápido e com o mínimo de desconforto possível, garantindo alívio imediato.</p></div>
+            </div>
+
+            <div class="faq-item">
+    <div class="faq-question">Vocês atendem por plano de saúde ou convênio? <span class="faq-icon">+</span></div>
+    <div class="faq-answer"><p>Não. Para garantirmos o nosso padrão de excelência, com tempo de dedicação exclusivo a cada paciente, uso de materiais premium e tecnologias avançadas, nossos atendimentos são estritamente particulares.</p></div>
+</div>
+
+            <div class="faq-item">
+                <div class="faq-question">A laserterapia serve para o meu caso? <span class="faq-icon">+</span></div>
+                <div class="faq-answer"><p>A laserterapia é altamente eficaz para micoses (fungos), inflamações e cicatrização. Durante a sua avaliação inicial, analisaremos a necessidade exata e montaremos um protocolo personalizado para o seu pé.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Diabéticos podem fazer tratamento com vocês? <span class="faq-icon">+</span></div>
+                <div class="faq-answer"><p>Sim! Somos especialistas em profilaxia do Pé Diabético. Temos protocolos rigorosos de biossegurança e manuseio delicado para garantir 100% de segurança e evitar complicações.</p></div>
             </div>
         </div>
     </section>
 
+   <section class="location" id="contato">
+    <div class="location-container">
+        <div>
+          <h2 style="color: var(--text-main); margin-bottom: 20px;">Onde Atendemos</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 10px;"><strong>Unidade Balneário Camboriú, SC</strong></p>
+            <p style="color: #555; margin-bottom: 25px;">
+                Rua 2448, 398 <br>
+                Centro - Balneário Camboriú/SC<br>
+                CEP: 88330-398
+            </p>
+            <p style="margin-bottom: 20px;"><strong>Horário de Atendimento:</strong><br> Segunda a Sexta: 09h às 18h</p>
+            
+            <a href="https://www.google.com/maps/search/?api=1&query=Rua+2448,+398,+Centro,+Balneário+Camboriú,+SC" target="_blank" style="color: var(--accent-orange); font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: 0.3s;">
+                <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span style="text-decoration: underline;">Ver rotas no Google Maps</span>
+            </a>
+        </div>
+        <div class="map-box">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.123!2d-48.6354!3d-26.9922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDU5JzMxLjkiUyA0OMKwMzgnMDcuNCJX!5e0!3m2!1spt-BR!2sbr!4v1700000000000" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
     <footer>
         <strong>Lu Machado Podologia Clínica</strong>
         <p>Balneário Camboriú (SC) | Cachoeirinha (RS)</p>
+        <a href="https://instagram.com/lumachado_podologia/" target="_blank" class="footer-insta">Siga no Instagram</a>
         <p style="font-size: 0.7rem; margin-top: 25px; opacity: 0.6;">© 2026 - Todos os direitos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/5547988907008" class="whatsapp-float" target="_blank">
-        <svg style="width:35px;height:35px" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42 1.56 1.56 2.41 3.63 2.41 5.82 0 4.51-3.67 8.18-8.18 8.18-1.54 0-3.04-.43-4.35-1.24l-.31-.19-3.24.85.86-3.15-.21-.34A8.146 8.146 0 0 1 3.82 11.9c0-4.51 3.67-8.23 8.23-8.23m-3.97 3.03c-.22 0-.36.01-.55.23-.19.21-.72.71-.72 1.72s.73 1.99.84 2.13c.1.14 1.44 2.2 3.48 3.08.49.21.87.33 1.17.43.49.15.93.13 1.28.08.39-.06 1.2-.49 1.37-.97.17-.47.17-.88.12-.97-.05-.09-.18-.14-.37-.24s-1.13-.55-1.3-.61-.3-.09-.43.09c-.13.18-.51.61-.62.75-.11.14-.23.16-.41.06-.18-.1-.77-.28-1.46-.9-.54-.48-.9-1.07-1.01-1.24-.1-.19-.01-.29.08-.38.08-.08.18-.21.28-.32.09-.1.12-.18.18-.3.06-.13.03-.24-.01-.34s-.43-1.03-.59-1.41c-.16-.38-.34-.33-.43-.33z"/>
+    <a href="https://wa.me/5547988907008?text=Olá! Gostaria de agendar uma avaliação em Balneário Camboriú." class="whatsapp-float track-wpp-click" target="_blank" aria-label="Agendar consulta pelo WhatsApp">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.199 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.993c-.001 5.45-4.436 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 0 5.414 0 12.05c0 2.123.553 4.197 1.602 6.02L0 24l6.132-1.61c1.76.96 3.743 1.467 5.761 1.467h.005c6.637 0 12.05-5.414 12.05-12.05a11.82 11.82 0 00-3.536-8.482z" fill="white"/>
         </svg>
     </a>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Inicializa o Carrossel
+        var swiper = new Swiper(".mySwiper", {
+            effect: "fade",
+            fadeEffect: { crossFade: true },
+            autoplay: { delay: 5000, disableOnInteraction: false },
+            speed: 1500,
+            loop: true,
+        });
+
+        // Inicializa o FAQ Sanfona
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
