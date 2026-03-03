@@ -288,6 +288,13 @@
                 if (!isActive) item.classList.add('active');
             });
         });
+
+        // Evento de Conversão Google Ads (Disparo do WhatsApp)
+        document.querySelectorAll('.track-wpp-click').forEach(btn => {
+            btn.addEventListener('click', function() {
+                gtag('event', 'conversion', {'send_to': 'AW-17852679223/hQVGCOLvmoIcELeI6cBC'});
+            });
+        });
     </script>
 </body>
 </html>
